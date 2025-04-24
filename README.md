@@ -1,10 +1,9 @@
-## azure DevOps interviews
+## Azure DevOps Interviews
 
+- For Azure DevOps-specific interview questions, [refer here](./interview-questions.md).
 
-* azure decops only interview questions [refer here](./interview-questions.md)
+- I am designing the answers to the questions in two formats:
+  1. **Short Answers** — Direct responses you can give during interviews.
+  2. **Scenario-Based Detailed Answers** — Helpful for understanding the context and remembering the key points more effectively.
 
-* I am desgining the Answers to questions two ways
-  a. only answer to tell in the interview
-  b. Analysing the scenrio and long answers.It is useful to rememeber short answers , which we will interview.
-
-* As of now, Answers to interview questions is not completed. I will update answers shortly.
+- ⚠️ *Note:* The answers to the interview questions are not yet complete. I will update them shortly.
