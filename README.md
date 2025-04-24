@@ -1,4 +1,4 @@
 ## azure DevOps interviews
 
 
-* azure decops only interview questions [refer here](!interview-questions.md)
+* azure decops only interview questions [refer here](./interview-questions.md)
