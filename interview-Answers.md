@@ -96,9 +96,9 @@ Azure Repos is similar to GitHub.
   * Answwer:* A build pipeline compiles and unit testing, static code anaysis, push artifact to artiact reposioty, while a release pipeline deploys the built code to environments.  
 
 - What are the different types of **hosted agents** in Azure DevOps for CI/CD?
- * Answer:*
- - Microsoft hosted agents: these are managed by Azure devops
- - Selfhosted agents: we need to add our __VM__'s to azure devops, to run the pipelines on those VM's
+ * Answer:* In azure DevOps we have two type of agent. 1. Microsoft hosted agent, 2. Self hosted agents.
+   - Microsoft hosted agents: these are managed by Azure devops
+   - Selfhosted agents: we need to add our __VM__'s to azure devops, to run the pipelines on those VM's
 - How can you pass variables between pipeline stages?
   * Answer:* we can do with two ways
    - define variable in the pipeline, call it
@@ -156,12 +156,12 @@ Azure Repos is similar to GitHub.
 - If the pipeline is running on a **self-hosted agent**, the Azure DevOps pipeline can connect to Azure Key Vault, provided that both the self-hosted agent's VM and the Azure Key Vault's private service connection belong to the same **VNet**.
 
 - What scripting languages can be used in Azure Pipelines?
- *Answer:* we can use shell , powershell and python scripting. 
+ * Answer:* we can use shell , powershell and python scripting. 
 - How do you use templates to modularize your YAML pipeline?  
   * Answer:* You can modularize your YAML pipeline by using templates to define reusable pipeline components (like steps, jobs, or stages) in separate YAML files, and then referencing them in your main pipeline file with the - template: keyword
 
 - How do you enforce pipeline policies or permissions for contributors?
- *Answers:* Pipeline policies or permissions for contributors can be enforced by configuring branch protection policies, required approvals, and security settings in Azure DevOps, which control who can trigger, modify, or approve pipeline runs
+ * Answers:* Pipeline policies or permissions for contributors can be enforced by configuring branch protection policies, required approvals, and security settings in Azure DevOps, which control who can trigger, modify, or approve pipeline runs
 
 
 - Most Azure DevOps projects use **.NET applications**. What are the steps to build a .NET application?
@@ -178,22 +178,39 @@ Azure Repos is similar to GitHub.
     - Note: interviwer may ask about detailed steps of how static code analysis push to sonarqube, he will ask details steps in the __YAML__ file.
 
 - What tools do you use or know about for identifying **security vulnerabilities** in software? How do you integrate them with Azure DevOps?
-  *Answer:* generally most of the project use __Vera code__ tool to find the applicaton code valunetaies, 
+  * Answer:* generally most of the project use __Vera code__ tool to find the applicaton code valunetaies, 
   - we connect to azure devops pipeline by azure devops service connection, becase any third party tool intergate to azure devops piepline by __service connection only__
 
 - **Important:** Do you have experience with Azure AKS? How do you deploy an application to Azure AKS using Azure DevOps?  
   > *Note:* Interviewers expect detailed steps for this scenario.
+  * Answer:* 
 
 - If we have an application to deploy to Azure AKS and it requires **sensitive information** from Azure Key Vault, what are the detailed steps to configure this in Azure DevOps and Azure AKS?
+  > *Note:* Interviewers expect detailed steps for this scenario. it is __main question in any interview__. I will detail more about it later. these are the basic steps
+  
+  - In the CI , build  the code, exexute unit testing, static code analysis with sonarqube, build the docker image , push to ___container registery__.
+  - In the CD, verify Azure identity by service connection, Connect azure aks cluster , run the helm prefined task, to deploy the application.
+  > *Note:* as I told earlier, each pin point of the pipeline asked by  interviewer. It will take time to precise answer. I will write precise it tomorrow. 
+ 
 
 - For services like Azure Cloud, Azure App Service, Azure VM, and Azure AKS, it's good to remember detailed CI/CD steps.
+ >* Note:* It is write, it need practical deploy. Then only anyone can anser
 
 - What is the difference between **System-Managed Identity** and **User-Managed Identity** in Azure?  
-  > *Note:* Sometimes asked in Azure DevOps interviews.
+  > *Note:*  it is azure cloud concept, Sometimes asked in Azure DevOps interviews.
+  * Answer:* __System-Managed Identity__ is automatically created, managed, and tied to a single resource, while __User-Managed Identity__ is created by the user and can be shared across multiple resources.
+  > *Note:* to understand more, person has to do one example of implemeting both.
+
+- What is the difference between **serice endpoint** and **private endpoint** in Azure?  
+  > *Note:*  it is azure cloud concept, Sometimes asked in Azure DevOps interviews.
+  * Answer:* A Service Endpoint extends a VNet to Azure services over the public network with secured traffic, while a Private Endpoint provides a private IP address within your VNet to access Azure services entirely over the private network.
 
 - How do you deploy an application to production only after manual approval?
+  * Answer:* You deploy an application to production only after manual approval by configuring an Environment with __pre-deployment approvals in Azure Pipelines__.
+
 
 - What is the purpose of **Environments** in Azure DevOps?
+  * Answer:* The purpose of Environments in Azure DevOps is to define and manage target deployment stages (like Dev, QA, Prod) with features like approvals, checks, and resource tracking for controlled and secure deployments.
 
 ---
 
@@ -201,9 +218,14 @@ Azure Repos is similar to GitHub.
 
 * Only a few questions are asked on Azure Artifacts in interviews.
 
-- What is the purpose of Azure Artifacts?
-- What is the difference between an Azure Pipeline artifact and an application artifact in the Azure Artifacts service?
-- How can we clone dependencies from Azure Artifacts?
+- **What is the purpose of Azure Artifacts?**  
+  *Answer:* Azure Artifacts is used to manage and share packages such as NuGet, npm, Maven, and Python across teams.
+
+- **What is the difference between an Azure Pipeline artifact and an application artifact in the Azure Artifacts service?**  
+  *Answer:* A pipeline artifact is generated during the build process and used for deployment, while an application artifact is a package stored in Azure Artifacts for sharing and reuse.
+
+- **How can we clone dependencies from Azure Artifacts?**  
+  *Answer:* By configuring the package manager (e.g., npm, NuGet) to use the Azure Artifacts feed URL.
 
 ---
 
@@ -211,8 +233,20 @@ Azure Repos is similar to GitHub.
 
 Relevant mostly to QA engineers; fewer questions are asked in DevOps interviews.
 
-- What is Azure Test Plans, and where does it fit in the Azure DevOps ecosystem?
-- What types of testing can you manage using Azure Test Plans?
-- What are the key components of a test plan in Azure DevOps?
-- What is the difference between test plans, test suites, and test cases?
-- How do you create a manual test case in Azure Test Plans?
+- **What is Azure Test Plans, and where does it fit in the Azure DevOps ecosystem?**  
+  *Answer:* Azure Test Plans is a service for managing and executing test cases, both manual and automated, as part of the Azure DevOps ecosystem.
+
+- **What types of testing can you manage using Azure Test Plans?**  
+  *Answer:* Manual testing, exploratory testing, and automated testing.
+
+- **What are the key components of a test plan in Azure DevOps?**  
+  *Answer:* Test plans, test suites, and test cases.
+
+- **What is the difference between test plans, test suites, and test cases?**  
+  *Answer:*  
+  - Test Plan: A container for organizing test suites and test cases.  
+  - Test Suite: A grouping of test cases based on specific criteria.  
+  - Test Case: A single test scenario with steps and expected outcomes.
+
+- **How do you create a manual test case in Azure Test Plans?**  
+  *Answer:* By navigating to the Test Plans section in Azure DevOps, selecting a test suite, and adding a new test case with detailed steps and expected results.
