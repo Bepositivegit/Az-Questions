@@ -10,6 +10,11 @@ Azure DevOps consists of five services:
 - Azure Test Plans
 
 ---
+## Table of Contents
+- [Azure Repos](#azure-repos)
+- [Azure Pipelines](#azure-pipelines)
+
+---
 
 ### Azure Boards
 Azure Boards is similar to project management tools like Jira.
@@ -22,7 +27,7 @@ Azure Boards is similar to project management tools like Jira.
 
 ---
 
-### Azure Repos
+## Azure Repos
 Azure Repos is similar to GitHub.
 
 **Common questions:**
@@ -55,7 +60,7 @@ Azure Repos is similar to GitHub.
 
 ---
 
-### Azure Pipelines
+## Azure Pipelines
 
 **Common questions:**
 - I have code in GitHub, and I need CI/CD with Azure Pipelines. How can you do that?  
@@ -72,19 +77,50 @@ Azure Repos is similar to GitHub.
   - `steps`: Part of a **job**. Actual tasks or scripts that get executed.
 
 - What is the difference between **parameter** and **variable** in Azure DevOps YAML?  
+  *Answer:* If we require variable types like **boolean**, **string**, **number**, or **object**, we declare them as **parameters**.  
+  - In the case of **variables**, the type is always treated as a **string**.  
+  - Parameter values are evaluated **before** the pipeline starts (at compile time), while variable values can be changed **during** pipeline execution (at runtime).
+
 - How do you connect Azure Cloud from an Azure DevOps pipeline?
+  * Answer:* by creating __servie connection__ in azure devops
 - What are the differences between Classic Pipelines and YAML Pipelines?
-- What is the difference between a build pipeline and a release pipeline?  
-  > *Note:* This is relevant in Classic Pipelines. In YAML pipelines, build and release are integrated.
+  *Answer:* 
+  -  Use Classic if you prefer a UI or are just starting with CI/CD in Azure DevOps.
+  - Use YAML if you want pipelines as code, better maintainability, and CI/CD versioning within your repo.
+
+- What is the difference between a build pipeline and a release pipeline?
+  * Answwer:* A build pipeline compiles and unit testing, static code anaysis, push artifact to artiact reposioty, while a release pipeline deploys the built code to environments.  
 
 - What are the different types of **hosted agents** in Azure DevOps for CI/CD?
+ * Answer:*
+ - Microsoft hosted agents: these are managed by Azure devops
+ - Selfhosted agents: we need to add our __VM__'s to azure devops, to run the pipelines on those VM's
 - How can you pass variables between pipeline stages?
+  * Answer:* we can do with two ways
+   - define variable in the pipeline, call it
+   - atach __varibale group__ to the pipeline, __variable group__ contain the list of key and value pairs
 - What is a pipeline artifact, and how do you use it?
+ * Answer:* After build the applicaiton, we will store applicaiton artifact inside the pipeline and publishing to use at the deployment. That why we are calling as __pipeline artifact__.
 - How do you implement conditional execution of steps or jobs?
+* Answer:* by using __condition keyword__. The below are the list of conditions
+  - succeeded(): Runs if the previous step or job succeeded.
+  - failed(): Runs if the previous step or job failed.
+  - always(): Runs regardless of whether previous steps or jobs succeeded or failed.
+  - canceled(): Runs if the previous step or job was canceled.
+  - eq(): Checks if two values are equal (e.g., eq(variables['Build.SourceBranch'], 'refs/heads/main')).
+  - ne(): Checks if two values are not equal.
+  - and(): Combines multiple conditions to run when all are true.
+  - or(): Combines multiple conditions to run when any are true.
+
 - How do you implement approval gates in a pipeline?
+  * Answer:* Approval gates in a pipeline are implemented using the Environment resource in Azure DevOps, where manual or automated approvals are required before progressing to the next stage or job.
+
 - How can you set up deployment to different environments (Dev, QA, Prod)?
+  *Answer:* creating __multi-stage__ YAML pipelines with separate stages for each environment, and using environment-specific variables and __approval gates__ for controlled deployments.
+
 - What are service connections, and how do you use them?  
-  - What are the different types of **service connection** configurations?
+  *Answer:* Service connections in Azure DevOps are secure connections to external services or resource like, AWS, Azure, etc
+- In how many ways of **service connection** configurations?
 - How do you secure secrets and sensitive information in pipelines?
 - How can you integrate Azure Key Vault with Azure DevOps to fetch secrets?
 - What scripting languages can be used in Azure Pipelines?
