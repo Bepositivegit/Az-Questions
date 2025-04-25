@@ -11,12 +11,15 @@ Azure DevOps consists of five services:
 
 ---
 ## Table of Contents
+- [Azure Boards](#azure-boards)
 - [Azure Repos](#azure-repos)
 - [Azure Pipelines](#azure-pipelines)
+- [Azure Artifacts](azure-artifacts)
+- [Azure Test Plans](azure-test-plans)
 
 ---
 
-### Azure Boards
+## Azure Boards
 Azure Boards is similar to project management tools like Jira.
 
 - Common topics:
@@ -149,7 +152,7 @@ Azure Repos is similar to GitHub.
 
 ---
 
-### Azure Artifacts
+## Azure Artifacts
 
 Only a few questions are asked on Azure Artifacts in interviews.
 
@@ -159,7 +162,7 @@ Only a few questions are asked on Azure Artifacts in interviews.
 
 ---
 
-### Azure Test Plans
+## Azure Test Plans
 
 Relevant mostly to QA engineers; fewer questions are asked in DevOps interviews.
 
