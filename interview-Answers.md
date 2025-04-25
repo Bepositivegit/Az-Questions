@@ -2,7 +2,7 @@
 
 Most Azure DevOps interviews focus primarily on the **Azure DevOps Pipeline service**.
 
-Azure DevOps consists of 5 services:
+Azure DevOps consists of five services:
 - Azure Boards
 - Azure Repos
 - Azure Pipelines
@@ -72,7 +72,7 @@ Azure Repos is similar to GitHub.
 - How do you implement conditional execution of steps or jobs?
 - How do you implement approval gates in a pipeline?
 - How can you set up deployment to different environments (Dev, QA, Prod)?
-- What are service connections, and how do you use them?
+- What are service connections, and how do you use them?  
   - What are the different types of **service connection** configurations?
 - How do you secure secrets and sensitive information in pipelines?
 - How can you integrate Azure Key Vault with Azure DevOps to fetch secrets?
@@ -86,14 +86,14 @@ Azure Repos is similar to GitHub.
 - How can we integrate **SonarQube** with Azure DevOps pipelines?
 - What tools do you use or know about for identifying **security vulnerabilities** in software? How do you integrate them with Azure DevOps?
 
-- **Important:** Do you have experience with Azure AKS? How do you deploy an application to Azure AKS using Azure DevOps?
+- **Important:** Do you have experience with Azure AKS? How do you deploy an application to Azure AKS using Azure DevOps?  
   > *Note:* Interviewers expect detailed steps for this scenario.
 
 - If we have an application to deploy to Azure AKS and it requires **sensitive information** from Azure Key Vault, what are the detailed steps to configure this in Azure DevOps and Azure AKS?
 
 - For services like Azure Cloud, Azure App Service, Azure VM, and Azure AKS, it's good to remember detailed CI/CD steps.
 
-- What is the difference between **System Managed Identity** and **User Managed Identity** in Azure?  
+- What is the difference between **System-Managed Identity** and **User-Managed Identity** in Azure?  
   > *Note:* Sometimes asked in Azure DevOps interviews.
 
 - How do you deploy an application to production only after manual approval?
@@ -107,7 +107,7 @@ Azure Repos is similar to GitHub.
 Only a few questions are asked on Azure Artifacts in interviews.
 
 - What is the purpose of Azure Artifacts?
-- What is the difference between an Azure Pipeline artifact and an application artifact in Azure Artifact service?
+- What is the difference between an Azure Pipeline artifact and an application artifact in the Azure Artifacts service?
 - How can we clone dependencies from Azure Artifacts?
 
 ---
@@ -116,7 +116,7 @@ Only a few questions are asked on Azure Artifacts in interviews.
 
 Relevant mostly to QA engineers; fewer questions are asked in DevOps interviews.
 
-- What is Azure Test Plans and where does it fit in the Azure DevOps ecosystem?
+- What is Azure Test Plans, and where does it fit in the Azure DevOps ecosystem?
 - What types of testing can you manage using Azure Test Plans?
 - What are the key components of a test plan in Azure DevOps?
 - What is the difference between test plans, test suites, and test cases?
