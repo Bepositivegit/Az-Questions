@@ -15,8 +15,8 @@ Azure DevOps consists of five services:
 - [Azure Boards](#azure-boards)
 - [Azure Repos](#azure-repos)
 - [Azure Pipelines](#azure-pipelines)
-- [Azure Artifacts](azure-artifacts)
-- [Azure Test Plans](azure-test-plans)
+- [Azure Artifacts](#azure-artifacts)
+- [Azure Test Plans](#azure-test-plans)
 
 ---
 
@@ -125,17 +125,61 @@ Azure Repos is similar to GitHub.
 - What are service connections, and how do you use them?  
   *Answer:* Service connections in Azure DevOps are secure connections to external services or resource like, AWS, Azure, etc
 - In how many ways of **service connection** configurations?
+  *Answer:* we can do multiple way, 
+  - app regisation(automatioc)
+  - app registation( manual)
+  - mamnaged identity 
+  - note: explanation about each identidy take 5 minutes. I will update more detail later.as of now we are skipping.
+
 - How do you secure secrets and sensitive information in pipelines?
+ * Answer:* we can do it two ways.
+   - store azure keyvault. connect azure keyvault to the pipeline.
+   - attach variable group the pipeline, in the varibale group, value of varibale save as __secret__ instead of __text__. by default mode is __text__.
+
 - How can you integrate Azure Key Vault with Azure DevOps to fetch secrets?
+
+**Answer:** You can integrate Azure Key Vault with Azure DevOps by connecting Azure Key Vault using the Azure DevOps Service Connection with **Azure Identity**.
+
+### Azure Key Vault Access Types:
+1. **Public**: The Key Vault is accessible publicly.
+2. **Public Restricted to Some IP Addresses**: The Key Vault is publicly accessible, but access is restricted to specific IP addresses.
+3. **Private**: The Key Vault is only accessible within a specific Virtual Network (VNet).
+
+#### 1. **Public Access**:
+- In the case of **public** access, Azure DevOps Pipelines can automatically connect to Azure Key Vault.
+
+#### 2. **Public Restricted to Some IP Addresses**:
+- For **public access with restrictions to specific IP addresses**, you need to add the Azure DevOps Pipeline agent's public IP to Azure Key Vault's access policy using Azure CLI. After that, the pipeline will be able to connect to Azure Key Vault.
+
+#### 3. **Private Access**:
+- If Azure Key Vault is **private**, and the Azure DevOps pipeline is running on a **Microsoft-hosted agent**, the pipeline cannot connect to Azure Key Vault.
+- If the pipeline is running on a **self-hosted agent**, the Azure DevOps pipeline can connect to Azure Key Vault, provided that both the self-hosted agent's VM and the Azure Key Vault's private service connection belong to the same **VNet**.
+
 - What scripting languages can be used in Azure Pipelines?
+ *Answer:* we can use shell , powershell and python scripting. 
 - How do you use templates to modularize your YAML pipeline?  
-  > *Note:* This relates to the shared library concept.
+  * Answer:* You can modularize your YAML pipeline by using templates to define reusable pipeline components (like steps, jobs, or stages) in separate YAML files, and then referencing them in your main pipeline file with the - template: keyword
 
 - How do you enforce pipeline policies or permissions for contributors?
+ *Answers:* Pipeline policies or permissions for contributors can be enforced by configuring branch protection policies, required approvals, and security settings in Azure DevOps, which control who can trigger, modify, or approve pipeline runs
+
 
 - Most Azure DevOps projects use **.NET applications**. What are the steps to build a .NET application?
+ * Answer:* 
+   - set dotnet version
+   - dotnet restore
+   - dontet build ( this case we have to two arguements 1. Debud, 2. release. release is used for prodcution.)
+   - dotne test
+   - dotnet test --> publishing code coverage
+   - dotnet publish --> publish the dotnet applicaiton artifact
+
 - How can we integrate **SonarQube** with Azure DevOps pipelines?
+  * By azure devops service connection.
+    - Note: interviwer may ask about detailed steps of how static code analysis push to sonarqube, he will ask details steps in the __YAML__ file.
+
 - What tools do you use or know about for identifying **security vulnerabilities** in software? How do you integrate them with Azure DevOps?
+  *Answer:* generally most of the project use __Vera code__ tool to find the applicaton code valunetaies, 
+  - we connect to azure devops pipeline by azure devops service connection, becase any third party tool intergate to azure devops piepline by __service connection only__
 
 - **Important:** Do you have experience with Azure AKS? How do you deploy an application to Azure AKS using Azure DevOps?  
   > *Note:* Interviewers expect detailed steps for this scenario.
