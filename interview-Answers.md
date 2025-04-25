@@ -58,9 +58,20 @@ Azure Repos is similar to GitHub.
 ### Azure Pipelines
 
 **Common questions:**
-- I have code in GitHub, and I need CI/CD with Azure Pipelines. How can you do that?
-- What is the basic structure of Azure DevOps YAML?
-- What is the difference between **parameter** and **variable** in Azure DevOps YAML?
+- I have code in GitHub, and I need CI/CD with Azure Pipelines. How can you do that?  
+  *Answer:* Create a service connection to connect GitHub.  
+  At the time of creating the pipeline, modify the Git remote repository to point to **GitHub**.
+
+- What is the basic structure of Azure DevOps YAML?  
+  *Answer:* A pipeline starts with:  
+  - `trigger`: Specifies the branches that will trigger the pipeline.  
+  - `pool`: Specifies the agent OS to run the pipeline.  
+  - `variables`: Defines pipeline-wide variables.  
+  - `stages`: Logical groupings of jobs (e.g., Build, Test, Deploy).  
+  - `jobs`: Part of a **stage**. A collection of steps that run on the same agent.  
+  - `steps`: Part of a **job**. Actual tasks or scripts that get executed.
+
+- What is the difference between **parameter** and **variable** in Azure DevOps YAML?  
 - How do you connect Azure Cloud from an Azure DevOps pipeline?
 - What are the differences between Classic Pipelines and YAML Pipelines?
 - What is the difference between a build pipeline and a release pipeline?  
