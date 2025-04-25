@@ -10,6 +10,7 @@ Azure DevOps consists of five services:
 - Azure Test Plans
 
 ---
+
 ## Table of Contents
 - [Azure Boards](#azure-boards)
 - [Azure Repos](#azure-repos)
@@ -154,7 +155,7 @@ Azure Repos is similar to GitHub.
 
 ## Azure Artifacts
 
-Only a few questions are asked on Azure Artifacts in interviews.
+* Only a few questions are asked on Azure Artifacts in interviews.
 
 - What is the purpose of Azure Artifacts?
 - What is the difference between an Azure Pipeline artifact and an application artifact in the Azure Artifacts service?
