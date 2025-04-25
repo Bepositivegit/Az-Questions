@@ -219,10 +219,10 @@ Azure Repos is similar to GitHub.
 * Only a few questions are asked on Azure Artifacts in interviews.
 
 - **What is the purpose of Azure Artifacts?**  
-  *Answer:* Azure Artifacts is used to manage and share packages such as NuGet, npm, Maven, and Python across teams.
+  * Answer:* Azure Artifacts is used to manage and share packages such as NuGet, npm, Maven, and Python across teams.
 
 - **What is the difference between an Azure Pipeline artifact and an application artifact in the Azure Artifacts service?**  
-  *Answer:* A pipeline artifact is generated during the build process and used for deployment, while an application artifact is a package stored in Azure Artifacts for sharing and reuse.
+  * Answer:* A pipeline artifact is generated during the build process and used for deployment, while an application artifact is a package stored in Azure Artifacts for sharing and reuse.
 
 - **How can we clone dependencies from Azure Artifacts?**  
   *Answer:* By configuring the package manager (e.g., npm, NuGet) to use the Azure Artifacts feed URL.
