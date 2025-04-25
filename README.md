@@ -1,6 +1,6 @@
 ## Azure DevOps Interviews
 
-- For Azure DevOps-specific interview questions, [refer here](./interview-questions.md). → This is the main file everyone should look into.
+- For Azure DevOps interview questions& Answers, [refer here](./interview-Answers.md). → This is the main file everyone should look into.
 
 - ⚠️ *Note:* The answers to the interview questions are not yet complete. I will update them shortly.
 - ⚠️ *Note:* Answers to interview questions can be approached in multiple ways. It is a __creative process__. I will keep updating the answers over time as I find better ways to present them.
