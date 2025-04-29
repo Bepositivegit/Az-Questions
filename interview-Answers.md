@@ -85,7 +85,8 @@ Azure Pipelines is a CI/CD service that automates software build, test, and depl
   - Classic Pipelines: GUI-based, easier setup.
 
 - How do you define a pipeline using ?
-Answer: 
+  * Answer:*
+``` 
   trigger: 
     branches: 
      include: 
@@ -97,6 +98,38 @@ Answer:
             - job:BuildJob
               steps: 
                 - script: 
+```
+- What are triggers in Azure Pipelines?
+```
+Answer:
+Manual Trigger
+Commit Trigger
+Scheduled Trigger
+Pipeline Trigger
+Pull Request (PR) Trigger
+```
+
+- What is an Agent in Azure DevOps?
+```
+Answer:
+An agent is a virtual machine (VM) that runs pipeline jobs.
+Microsoft-hosted agents: Managed by Azure.
+Self-hosted agents: Installed by users for custom configurations.
+```
+
+- How do you store secrets securely in Azure Pipelines?
+```
+Answer:
+Use Azure Key Vault.
+Use Pipeline Variables with "secret" option.
+```
+
+
+- What are Service Connections in Azure DevOps?
+Answer:
+Service Connections allow pipelines to securely connect to external services like Azure, AWS, or Kubernetes
+
+```
 
 - What is the basic structure of Azure DevOps YAML?  
   *Answer:* A pipeline starts with:  
