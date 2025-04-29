@@ -1,19 +1,16 @@
 ## Azure DevOps Interview Questions
 
-Most Azure DevOps interviews focus primarily on the **Azure DevOps Pipeline service**.
+#### notes:
+* Before the reading interview questions, read the below __recommendations__
+* 1. First with out __basic__ work /traing __azure devopsservice , it is not usefil. Basic practical implementaion is required.
+* 2. The below hireachary read the interview questions
+  *  __azure pipeline__ 
+  * __azure artifact__
+  * __azure repo__
+  * __azure Boards__
+  * __azure test plans__
 
-* 1. What is Azure DevOps?
-  Answer: Azure DevOps is a cloud-based DevOps platform providing CI/CD pipelines, version control, testing, and deployment automation.
-
-2. What are the core components of Azure DevOps?
-   * Answer:* Azure DevOps consists of five services:
-   - Azure Repos – Version control
-   - Azure Pipelines – CI/CD automation
-   - Azure Artifacts – Package management
-   - Azure Test Plans – Testing framework
-   - Azure Boards – Agile project tracking
-
----
+* 3.Most Azure DevOps interview focus primarily on the __Azure Pipeline__.
 
 ## Table of Contents
 - [Azure Boards](#azure-boards)
@@ -24,6 +21,20 @@ Most Azure DevOps interviews focus primarily on the **Azure DevOps Pipeline serv
 
 ---
 
+- What is Azure DevOps?
+```
+Answer: Azure DevOps is a cloud-based DevOps platform providing CI/CD pipelines, version control, testing, and deployment automation.
+```
+
+-  What are the core components of Azure DevOps?
+```
+Answer: Azure DevOps consists of five services:
+- Azure Repos – Version control
+- Azure Pipelines – CI/CD automation
+- Azure Artifacts – Package management
+- Azure Test Plans – Testing framework
+- Azure Boards – Agile project tracking
+```
 ## Azure Boards
 Azure Boards is similar to project management tools like Jira.
 
