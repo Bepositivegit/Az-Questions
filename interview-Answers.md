@@ -40,7 +40,9 @@ Azure Repos is similar to GitHub.
 
 **Common questions:**
 - **How is Azure Repos different from GitHub or Bitbucket?**  
-  *Answer:* There is no functional difference. Azure Repos is part of the Azure DevOps ecosystem. All three serve the purpose of acting as a **Git remote repository**.
+```
+Answer: There is no functional difference all of there. Azure Repos is part of the Azure DevOps ecosystem. it is a __ git remote repository __ provider similar to __GitHub__.
+```
 
 - **What are the two types of version control supported in Azure Repos?**  
   *Answer:* Git and TFVC (Team Foundation Version Control – Centralized Version Control).  
@@ -51,7 +53,8 @@ Azure Repos is similar to GitHub.
     a. Username and password  
     b. SSH method
 
-- **How can you enforce branch policies in Azure Repos?**  
+- How can you enforce branch policies in Azure Repos?  
+```
   *Answer:*  
   Go to your Azure DevOps project → Repos → Branches.  
   Hover over your branch (e.g., `main`) → click the ellipsis (⋯) → Branch policies.  
@@ -60,9 +63,53 @@ Azure Repos is similar to GitHub.
   - Required build validation
   - Check for linked work items
   - Merge strategy
+```
 
-- **How do you manage access and permissions for Azure Repos?**
-- **What is a repository policy, and how do you apply one?**
+- How do you manage access and permissions for Azure Repos?
+```
+Answer:
+* we can do with 3 ways
+ 1. Use Azure DevOps Security Groups
+Azure DevOps has built-in security groups such as:
+Project Administrators
+Contributors
+Readers
+2. Set Repository-Level Permissions
+You can grant permissions at the individual repository level.
+Steps:
+Go to Project Settings → Repositories.
+Choose the repository.
+Click Security.
+Assign permissions to users or groups:
+Read
+Contribute
+Branch creation/deletion
+Force push
+Tag creation
+Manage permissions
+Use "Deny" with caution—it overrides any "Allow".
+
+3. Use Branch Policies for Fine-Grained Control
+Set up branch policies to:
+Require pull request reviewers
+Enforce builds before merges
+Limit who can push to protected branches (e.g., main or develop)
+Steps:
+Repos → Branches → Select a branch → Click Branch Policies
+
+```
+
+- What is a repository policy, and how do you apply one?
+```
+Answer:
+A repository policy in Azure Repos is a rule that helps control how code is added or changed in a repository, especially on important branches like main or develop. These policies help keep the codebase safe, high quality, and well-reviewed.
+*  Common Repository Policies:
+Require pull request reviews before merging
+Enforce successful builds before code is merged
+Restrict who can push directly to a branch
+Limit merge types (like squash, rebase, etc.)
+```
+
 - **How can you restrict force-pushes or direct commits to protected branches?**
 - **What is the purpose of *pull request templates*?**
 
