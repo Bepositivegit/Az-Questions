@@ -126,45 +126,109 @@ Use Pipeline Variables with "secret" option.
 
 
 - What are Service Connections in Azure DevOps?
+```
 Answer:
 Service Connections allow pipelines to securely connect to external services like Azure, AWS, or Kubernetes
-
+```
+- How do you restrict a pipeline to run on specific branches?
+```
+Answer: We have use keyword "exclude"
+The below content is for reference.
+`
+trigger: 
+  branches: 
+    include: 
+      - main
+    exclude: 
+      - feature/*
+`
 ```
 
-- What is the basic structure of Azure DevOps YAML?  
-  *Answer:* A pipeline starts with:  
-  - `trigger`: Specifies the branches that will trigger the pipeline.  
-  - `pool`: Specifies the agent OS to run the pipeline.  
-  - `variables`: Defines pipeline-wide variables.  
-  - `stages`: Logical groupings of jobs (e.g., Build, Test, Deploy).  
-  - `jobs`: Part of a **stage**. A collection of steps that run on the same agent.  
-  - `steps`: Part of a **job**. Actual tasks or scripts that get executed.
+- What are Artifacts in Azure Pipelines?
+```
+Answer:
+Artifacts are build outputs (binaries, packages, Docker images) stored and shared between pipeline stages.
+```
 
-- What is the difference between **parameter** and **variable** in Azure DevOps YAML?  
-  *Answer:* If we require variable types like **boolean**, **string**, **number**, or **object**, we declare them as **parameters**.  
-  - In the case of **variables**, the type is always treated as a **string**.  
-  - Parameter values are evaluated **before** the pipeline starts (at compile time), while variable values can be changed **during** pipeline execution (at runtime).
+- What is the basic structure of Azure DevOps YAML? 
+``` 
+Answer:
+A pipeline starts with:  
+trigger: Specifies the branches that will trigger the pipeline.  
+pool: Specifies the agent OS to run the pipeline.  
+variables: Defines pipeline-wide variables.  
+stages: Logical groupings of jobs (e.g., Build, Test, Deploy).  
+jobs: Part of a **stage**. A collection of steps that run on the same agent.  
+steps: Part of a **job**. Actual tasks or scripts that get executed.
+```
+- What is a Multi-Stage Pipeline?
+```
+Answer:
+A multi-stage pipeline has separate stages for build, test, and deployment.
+```
 
+- How do you implement pipeline approvals in Azure DevOps?
+```
+Answer:
+Use pre-deployment approvals in Environments.
+```
+- What is a Deployment Group?
+```
+Answer:
+A Deployment Group is a collection of servers or VMs used for on-premises deployments.
+```
+- How do you monitor pipeline execution in Azure DevOps?
+```
+Answer:
+Use Logs, Azure Monitor, and Application Insights.
+```
+
+-  How do you implement rollback in Azure Pipelines?
+```
+Answer:
+Re-deploy the previous successful artifact.
+```
+
+- What is the difference between **parameter** and **variable** in Azure DevOps YAML? 
+--- 
+Answer: If we require variable types like **boolean**, **string**, **number**, or **object**, we declare them as **parameters**.  
+- In the case of **variables**, the type is always treated as a **string**.  
+- Parameter values are evaluated **before** the pipeline starts (at compile time), while variable values can be changed **during** pipeline execution (at runtime).
+---
 - How do you connect Azure Cloud from an Azure DevOps pipeline?
-  * Answer:* by creating __servie connection__ in azure devops
+```
+Answer: by creating __servie connection__ in azure devops
+```
+
 - What are the differences between Classic Pipelines and YAML Pipelines?
-  *Answer:* 
+```
+Answer: 
   -  Use Classic if you prefer a UI or are just starting with CI/CD in Azure DevOps.
   - Use YAML if you want pipelines as code, better maintainability, and CI/CD versioning within your repo.
+```
 
 - What is the difference between a build pipeline and a release pipeline?
-  * Answwer:* A build pipeline compiles and unit testing, static code anaysis, push artifact to artiact reposioty, while a release pipeline deploys the built code to environments.  
+```
+Answwer: A build pipeline compiles and unit testing, static code anaysis, push artifact to artiact reposioty, while a release pipeline deploys the built code to environments.  
+```
 
 - What are the different types of **hosted agents** in Azure DevOps for CI/CD?
- * Answer:* In azure DevOps we have two type of agent. 1. Microsoft hosted agent, 2. Self hosted agents.
+```
+Answer: In azure DevOps we have two type of agent. 1. Microsoft hosted agent, 2. Self hosted agents.
    - Microsoft hosted agents: these are managed by Azure devops
    - Selfhosted agents: we need to add our __VM__'s to azure devops, to run the pipelines on those VM's
+```
+
 - How can you pass variables between pipeline stages?
+```
   * Answer:* we can do with two ways
    - define variable in the pipeline, call it
    - atach __varibale group__ to the pipeline, __variable group__ contain the list of key and value pairs
+``` 
 - What is a pipeline artifact, and how do you use it?
+```
  * Answer:* After build the applicaiton, we will store applicaiton artifact inside the pipeline and publishing to use at the deployment. That why we are calling as __pipeline artifact__.
+```
 - How do you implement conditional execution of steps or jobs?
 * Answer:* by using __condition keyword__. The below are the list of conditions
   - succeeded(): Runs if the previous step or job succeeded.
