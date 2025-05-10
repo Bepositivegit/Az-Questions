@@ -119,8 +119,9 @@ Enforce successful builds before code is merged
 Restrict who can push directly to a branch
 Limit merge types (like squash, rebase, etc.)
 ```
-what is Squash commit ?
-Squash Commit merge combines all your branch's separate commits into a single commit when merging into the main branch, creating a cleaner project history.
+- what is benefit of Squash commit enablement while we are completing Pull Request ?
+Answer:
+A Squash Commit merge combines all your branch's separate commits into a single commit when merging into the main branch, creating a cleaner project history.
 
 - **How can you restrict force-pushes or direct commits to protected branches?**
 - **What is the purpose of *pull request templates*?**
